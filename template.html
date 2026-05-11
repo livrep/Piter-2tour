@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>РК Малахит · Санкт-Петербург 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#050912;
+--glass:rgba(255,255,255,0.07);
+--glass-border:rgba(255,255,255,0.1);
+--gold:#d9b85c;
+--green:#42b36f;
+--text:rgba(255,255,255,0.92);
+--text-soft:rgba(255,255,255,0.68);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Raleway',sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+position:relative;
+}
+
+/* ЗВЕЗДЫ */
+
+body::before{
+content:'';
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top, rgba(66,179,111,0.14), transparent 40%),
+radial-gradient(circle at bottom, rgba(217,184,92,0.10), transparent 40%);
+z-index:-3;
+}
+
+.stars{
+position:fixed;
+inset:0;
+z-index:-2;
+overflow:hidden;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+opacity:0.7;
+animation:twinkle linear infinite;
+}
+
+@keyframes twinkle{
+0%{opacity:0.2;}
+50%{opacity:1;}
+100%{opacity:0.2;}
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+padding:40px 20px;
+text-align:center;
+position:relative;
+}
+
+.logo{
+width:min(340px,70vw);
+margin-bottom:24px;
+filter:drop-shadow(0 0 25px rgba(66,179,111,0.45));
+}
+
+.badge{
+display:inline-block;
+padding:10px 22px;
+border-radius:999px;
+background:rgba(217,184,92,0.12);
+border:1px solid rgba(217,184,92,0.2);
+color:var(--gold);
+font-size:13px;
+letter-spacing:1px;
+margin-bottom:28px;
+backdrop-filter:blur(12px);
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:clamp(54px,10vw,100px);
+font-weight:600;
+line-height:0.95;
+margin-bottom:20px;
+}
+
+.hero h1 span{
+color:var(--gold);
+font-style:italic;
+}
+
+.hero-sub{
+max-width:780px;
+font-size:20px;
+line-height:1.7;
+color:var(--text-soft);
+margin-bottom:36px;
+}
+
+.chips{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.chip{
+padding:12px 18px;
+border-radius:999px;
+background:var(--glass);
+border:1px solid var(--glass-border);
+backdrop-filter:blur(18px);
+font-size:14px;
+}
+
+/* SECTION */
+
+.section{
+max-width:980px;
+margin:auto;
+padding:70px 20px;
+}
+
+.section-label{
+font-size:12px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:var(--gold);
+margin-bottom:16px;
+}
+
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:clamp(34px,5vw,52px);
+margin-bottom:40px;
+}
+
+/* CARD */
+
+.card{
+background:var(--glass);
+border:1px solid var(--glass-border);
+backdrop-filter:blur(22px);
+border-radius:28px;
+padding:34px;
+margin-bottom:28px;
+box-shadow:
+0 10px 40px rgba(0,0,0,0.35),
+inset 0 1px 0 rgba(255,255,255,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
+
+.card-head{
+display:flex;
+justify-content:space-between;
+gap:18px;
+align-items:flex-start;
+margin-bottom:28px;
+flex-wrap:wrap;
+}
+
+.day{
+font-size:12px;
+letter-spacing:2px;
+text-transform:uppercase;
+color:var(--text-soft);
+margin-bottom:8px;
+}
+
+.title{
+font-family:'Playfair Display',serif;
+font-size:34px;
+line-height:1.1;
+}
+
+.type{
+padding:10px 18px;
+border-radius:999px;
+font-size:12px;
+text-transform:uppercase;
+letter-spacing:1px;
+background:rgba(66,179,111,0.14);
+border:1px solid rgba(66,179,111,0.25);
+color:#8ef2b4;
+}
+
+/* TIMELINE */
+
+.timeline{
+display:flex;
+flex-direction:column;
+gap:24px;
+}
+
+.item{
+display:flex;
+gap:18px;
+}
+
+.left{
+min-width:72px;
+text-align:center;
+}
+
+.time{
+font-size:12px;
+color:var(--gold);
+margin-bottom:8px;
+}
+
+.dot{
+width:34px;
+height:34px;
+border-radius:50%;
+background:rgba(255,255,255,0.08);
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.content{
+flex:1;
+padding-bottom:8px;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.place{
+font-family:'Playfair Display',serif;
+font-size:24px;
+margin-bottom:8px;
+}
+
+.desc{
+font-size:15px;
+line-height:1.7;
+color:var(--text-soft);
+}
+
+/* BUTTONS */
+
+.map-btn{
+display:inline-flex;
+align-items:center;
+gap:10px;
+margin-top:28px;
+padding:14px 22px;
+border-radius:16px;
+background:rgba(217,184,92,0.12);
+border:1px solid rgba(217,184,92,0.25);
+color:var(--gold);
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+.map-btn:hover{
+background:rgba(217,184,92,0.18);
+transform:translateY(-2px);
+}
+
+/* COUNTDOWN */
+
+.countdown{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:14px;
+margin-top:30px;
+}
+
+.count{
+background:var(--glass);
+border:1px solid var(--glass-border);
+border-radius:24px;
+padding:24px;
+text-align:center;
+backdrop-filter:blur(18px);
+}
+
+.count-num{
+font-size:42px;
+font-family:'Playfair Display',serif;
+color:var(--gold);
+margin-bottom:8px;
+}
+
+.count-label{
+font-size:13px;
+color:var(--text-soft);
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+/* FOOTER */
+
+footer{
+padding:80px 20px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.06);
+margin-top:50px;
+}
+
+footer img{
+width:180px;
+margin-bottom:24px;
+filter:drop-shadow(0 0 20px rgba(66,179,111,0.4));
+}
+
+footer p{
+max-width:700px;
+margin:auto;
+line-height:1.8;
+color:var(--text-soft);
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.card{
+padding:26px;
+}
+
+.title{
+font-size:28px;
+}
+
+.place{
+font-size:22px;
+}
+
+.hero-sub{
+font-size:18px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<img
+class="logo"
+src="malachite-logo.png"
+alt="РК Малахит">
+
+<div class="badge">
+🏉 5 — 8 июня 2026 · Санкт-Петербург · Белые ночи
+</div>
+
+<h1>
+Санкт-<span>Петербург</span>
+</h1>
+
+<div class="hero-sub">
+Едем на соревнования, играем на стадионе Петровский и показываем самый красивый Петербург человеку, который увидит его впервые.
+</div>
+
+<div class="chips">
+<div class="chip">🚆 Прибытие · 5 июня · 11:15</div>
+<div class="chip">🏉 Стадион Петровский</div>
+<div class="chip">🚆 Отъезд · 8 июня · 13:10</div>
+</div>
+
+</section>
+
+<!-- COUNTDOWN -->
+
+<section class="section">
+
+<div class="section-label">
+До поездки
+</div>
+
+<h2 class="section-title">
+Обратный отсчёт
+</h2>
+
+<div class="countdown">
+
+<div class="count">
+<div class="count-num" id="days">0</div>
+<div class="count-label">дней</div>
+</div>
+
+<div class="count">
+<div class="count-num" id="hours">0</div>
+<div class="count-label">часов</div>
+</div>
+
+<div class="count">
+<div class="count-num" id="minutes">0</div>
+<div class="count-label">минут</div>
+</div>
+
+<div class="count">
+<div class="count-num" id="seconds">0</div>
+<div class="count-label">секунд</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- РАСПИСАНИЕ -->
+
+<section class="section">
+
+<div class="section-label">
+Маршрут
+</div>
+
+<h2 class="section-title">
+Наше путешествие по дням
+</h2>
+
+<!-- ПЯТНИЦА -->
+
+<div class="card">
+
+<div class="card-head">
+
+<div>
+<div class="day">
+День 1 · Пятница · 5 июня
+</div>
+
+<div class="title">
+Первое знакомство<br>
+с Петербургом
+</div>
+</div>
+
+<div class="type">
+прогулка
+</div>
+
+</div>
+
+<div class="timeline">
+
+<div class="item">
+<div class="left">
+<div class="time">11:15</div>
+<div class="dot">🚆</div>
+</div>
+
+<div class="content">
+<div class="place">
+Прибытие
+</div>
+
+<div class="desc">
+Вокзал, заселение, обед и немного отдыха после дороги.
+</div>
+</div>
+</div>
+
+<div class="item">
+<div class="left">
+<div class="time">~14:30</div>
+<div class="dot">🏰</div>
+</div>
+
+<div class="content">
+<div class="place">
+Петропавловская крепость
+</div>
+
+<div class="desc">
+Первое место Петербурга. Вид на Неву, золотой шпиль и атмосфера белых ночей.
+</div>
+</div>
+</div>
+
+<div class="item">
+<div class="left">
+<div class="time">~16:00</div>
+<div class="dot">🌊</div>
+</div>
+
+<div class="content">
+<div class="place">
+Стрелка Васильевского острова
+</div>
+
+<div class="desc">
+Один из самых красивых видов на центр города и Дворцовый мост.
+</div>
+</div>
+</div>
+
+<div class="item">
+<div class="left">
+<div class="time">~18:00</div>
+<div class="dot">👑</div>
+</div>
+
+<div class="content">
+<div class="place">
+Дворцовая площадь
+</div>
+
+<div class="desc">
+Эрмитаж, белые ночи и тот самый открыточный Петербург.
+</div>
+</div>
+</div>
+
+<div class="item">
+<div class="left">
+<div class="time">~19:30</div>
+<div class="dot">🍩</div>
+</div>
+
+<div class="content">
+<div class="place">
+Пышечная
+</div>
+
+<div class="desc">
+Большая Конюшенная, 25. Горячие пышки и кофе перед вечерней прогулкой.
+</div>
+</div>
+</div>
+
+</div>
+
+<a
+class="map-btn"
+href="https://yandex.ru/maps/?rtext=59.9536,30.2686~59.9441,30.3040~59.9399,30.3157&rtt=pd&l=map"
+target="_blank">
+📍 Открыть маршрут пятницы
+</a>
+
+</div>
+
+<!-- СУББОТА -->
+
+<div class="card">
+
+<div class="card-head">
+
+<div>
+<div class="day">
+День 2 · Суббота · 6 июня
+</div>
+
+<div class="title">
+Игровой день 🏉
+</div>
+</div>
+
+<div class="type">
+соревнования
+</div>
+
+</div>
+
+<div class="timeline">
+
+<div class="item">
+<div class="left">
+<div class="time">утро</div>
+<div class="dot">🌅</div>
+</div>
+
+<div class="content">
+<div class="place">
+Подготовка к играм
+</div>
+
+<div class="desc">
+Завтрак, сборы и выезд на стадион.
+</div>
+</div>
+</div>
+
+<div class="item">
+<div class="left">
+<div class="time">день</div>
+<div class="dot">🏉</div>
+</div>
+
+<div class="content">
+<div class="place">
+Стадион Петровский
+</div>
+
+<div class="desc">
+Игры, команда и атмосфера большого турнира.
+</div>
+</div>
+</div>
+
+<div class="item">
+<div class="left">
+<div class="time">вечер</div>
+<div class="dot">🍽️</div>
+</div>
+
+<div class="content">
+<div class="place">
+Рубинштейна
+</div>
+
+<div class="desc">
+Главная ресторанная улица Петербурга. Ужин и прогулка.
+</div>
+</div>
+</div>
+
+</div>
+
+<a
+class="map-btn"
+href="https://yandex.ru/maps/?text=Стадион+Петровский+Санкт-Петербург"
+target="_blank">
+📍 Стадион на карте
+</a>
+
+</div>
+
+<!-- ВОСКРЕСЕНЬЕ -->
+
+<div class="card">
+
+<div class="card-head">
+
+<div>
+<div class="day">
+День 3 · Воскресенье · 7 июня
+</div>
+
+<div class="title">
+Белые ночи ✨
+</div>
+</div>
+
+<div class="type">
+главный вечер
+</div>
+
+</div>
+
+<div class="timeline">
+
+<div class="item">
+<div class="left">
+<div class="time">15:00–16:00</div>
+<div class="dot">🏆</div>
+</div>
+
+<div class="content">
+<div class="place">
+Награждение
+</div>
+
+<div class="desc">
+После игр отдыхаете, идёте в душ и собираетесь гулять по вечернему Питеру.
+</div>
+</div>
+</div>
+
+<div class="item">
+<div class="left">
+<div class="time">~18:00</div>
+<div class="dot">🐴</div>
+</div>
+
+<div class="content">
+<div class="place">
+Медный всадник
+</div>
+
+<div class="desc">
+Один из главных символов города и красивый вид на Неву.
+</div>
+</div>
+</div>
+
+<div class="item">
+<div class="left">
+<div class="time">~18:45</div>
+<div class="dot">🎨</div>
+</div>
+
+<div class="content">
+<div class="place">
+Спас на Крови
+</div>
+
+<div class="desc">
+Самая фотогеничная церковь Петербурга.
+</div>
+</div>
+</div>
+
+<div class="item">
+<div class="left">
+<div class="time">~20:00</div>
+<div class="dot">👑</div>
+</div>
+
+<div class="content">
+<div class="place">
+Дворцовая площадь
+</div>
+
+<div class="desc">
+Главная атмосфера белых ночей. Светло почти до полуночи.
+</div>
+</div>
+</div>
+
+</div>
+
+<a
+class="map-btn"
+href="https://yandex.ru/maps/?rtext=59.9363,30.3017~59.9340,30.3062~59.9399,30.3157&rtt=pd&l=map"
+target="_blank">
+📍 Маршрут белых ночей
+</a>
+
+</div>
+
+<!-- ПОНЕДЕЛЬНИК -->
+
+<div class="card">
+
+<div class="card-head">
+
+<div>
+<div class="day">
+День 4 · Понедельник · 8 июня
+</div>
+
+<div class="title">
+До свидания,<br>
+Петербург
+</div>
+</div>
+
+<div class="type">
+отъезд
+</div>
+
+</div>
+
+<div class="timeline">
+
+<div class="item">
+<div class="left">
+<div class="time">~11:00</div>
+<div class="dot">☕</div>
+</div>
+
+<div class="content">
+<div class="place">
+Последний кофе и пышки
+</div>
+
+<div class="desc">
+Спокойное утро перед поездом и прощание с городом.
+</div>
+</div>
+</div>
+
+<div class="item">
+<div class="left">
+<div class="time">13:10</div>
+<div class="dot">🚆</div>
+</div>
+
+<div class="content">
+<div class="place">
+Отъезд домой
+</div>
+
+<div class="desc">
+Питер, мы ещё вернёмся.
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<img src="malachite-logo.png" alt="РК Малахит">
+
+<p>
+РК Малахит · Санкт-Петербург · Июнь 2026<br>
+Белые ночи, регби, команда и самый красивый город России.
+</p>
+
+</footer>
+
+<script>
+
+/* ЗВЕЗДЫ */
+
+const starsContainer = document.getElementById('stars');
+
+for(let i=0;i<160;i++){
+
+const star=document.createElement('div');
+
+star.classList.add('star');
+
+const size=Math.random()*3;
+
+star.style.width=size+'px';
+star.style.height=size+'px';
+
+star.style.left=Math.random()*100+'vw';
+star.style.top=Math.random()*100+'vh';
+
+star.style.animationDuration=(2+Math.random()*4)+'s';
+
+starsContainer.appendChild(star);
+
+}
+
+/* COUNTDOWN */
+
+const tripDate = new Date("2026-06-05T11:15:00").getTime();
+
+function updateCountdown(){
+
+const now = new Date().getTime();
+
+const distance = tripDate - now;
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("days").innerText = days;
+document.getElementById("hours").innerText = hours;
+document.getElementById("minutes").innerText = minutes;
+document.getElementById("seconds").innerText = seconds;
+
+}
+
+setInterval(updateCountdown,1000);
+
+updateCountdown();
+
+</script>
+
+</body>
+</html>
