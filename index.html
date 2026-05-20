@@ -5,533 +5,283 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Санкт-Петербург · Регби-тур 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
-:root{
---gold:#C9A84C;
---gold-light:#E8C97A;
---white-glass:rgba(255,255,255,0.12);
---text:#F0EDE6;
---text-dim:rgba(240,237,230,0.7);
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Raleway',sans-serif;
-background:#080c1a;
-color:var(--text);
-min-height:100vh;
-overflow-x:hidden;
-}
-
-.stars-bg{
-position:fixed;
-inset:0;
-z-index:0;
-background:
-radial-gradient(ellipse at 20% 30%,#0d1b3e 0%,#080c1a 60%),
-radial-gradient(ellipse at 80% 70%,#1a0d2e 0%,transparent 60%);
-}
-
-header{
-position:relative;
-z-index:10;
-text-align:center;
-padding:48px 24px 36px;
-border-bottom:1px solid rgba(201,168,76,.2);
-}
-
-.logo-row{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:16px;
-margin-bottom:16px;
-}
-
-.club-logo{
-width:56px;
-height:56px;
-object-fit:contain;
-}
-
-.header-title{
-font-family:'Playfair Display',serif;
-font-size:clamp(2rem,6vw,3.5rem);
-font-weight:900;
-background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 50%,#fff 100%);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.header-sub{
-font-size:.9rem;
-letter-spacing:.25em;
-text-transform:uppercase;
-color:var(--text-dim);
-margin-top:8px;
-}
-
-.gold-line{
-width:80px;
-height:2px;
-background:linear-gradient(90deg,transparent,var(--gold),transparent);
-margin:16px auto 0;
-}
-
-.notice-banner{
-position:relative;
-z-index:10;
-margin:20px auto;
-padding:16px 20px;
-background:rgba(180,60,40,.15);
-border:1px solid rgba(220,80,50,.4);
-border-radius:10px;
-max-width:900px;
-backdrop-filter:blur(8px);
-}
-
-.notice-banner h3{
-font-size:.95rem;
-color:#f08070;
-margin-bottom:8px;
-}
-
-.notice-banner ul{
-list-style:none;
-font-size:.82rem;
-color:var(--text-dim);
-display:flex;
-flex-direction:column;
-gap:4px;
-}
-
-.notice-banner li::before{
-content:'⚠ ';
-}
-
-main{
-position:relative;
-z-index:10;
-max-width:920px;
-margin:0 auto;
-padding:0 16px 60px;
-}
-
-.day-card{
-margin:28px 0;
-background:var(--white-glass);
-border:1px solid rgba(201,168,76,.25);
-border-radius:16px;
-overflow:hidden;
-backdrop-filter:blur(12px);
-}
-
-.day-header{
-display:flex;
-align-items:center;
-gap:16px;
-padding:20px 24px;
-border-bottom:1px solid rgba(201,168,76,.15);
-background:rgba(201,168,76,.06);
-}
-
-.day-badge{
-font-family:'Playfair Display',serif;
-font-size:2rem;
-font-weight:900;
-color:var(--gold);
-}
-
-.day-info h2{
-font-family:'Playfair Display',serif;
-font-size:1.2rem;
-}
-
-.day-info .day-date{
-font-size:.78rem;
-letter-spacing:.15em;
-text-transform:uppercase;
-color:var(--gold-light);
-margin-top:2px;
-}
-
-.day-tag{
-margin-left:auto;
-font-size:.72rem;
-padding:5px 12px;
-border-radius:20px;
-border:1px solid;
-white-space:nowrap;
-}
-
-.tag-travel{
-color:#7eb8f5;
-border-color:rgba(126,184,245,.4);
-background:rgba(126,184,245,.08);
-}
-
-.tag-game{
-color:#f5a27e;
-border-color:rgba(245,162,126,.4);
-background:rgba(245,162,126,.08);
-}
-
-.tag-explore{
-color:#7ef5b0;
-border-color:rgba(126,245,176,.4);
-background:rgba(126,245,176,.08);
-}
-
-.tag-home{
-color:#d0b8f5;
-border-color:rgba(208,184,245,.4);
-background:rgba(208,184,245,.08);
-}
-
-.timeline{
-padding:20px 24px;
-display:flex;
-flex-direction:column;
-}
-
-.tl-item{
-display:flex;
-gap:16px;
-padding-bottom:20px;
-}
-
-.tl-left{
-display:flex;
-flex-direction:column;
-align-items:center;
-min-width:52px;
-}
-
-.tl-time{
-font-size:.75rem;
-color:var(--gold-light);
-}
-
-.tl-dot{
-width:10px;
-height:10px;
-border-radius:50%;
-background:var(--gold);
-margin:6px 0;
-}
-
-.tl-line{
-width:1px;
-flex:1;
-background:linear-gradient(to bottom,rgba(201,168,76,.4),rgba(201,168,76,.1));
-}
-
-.tl-content{
-flex:1;
-}
-
-.tl-content h3{
-font-size:.93rem;
-margin-bottom:4px;
-}
-
-.tl-content p{
-font-size:.8rem;
-color:var(--text-dim);
-line-height:1.6;
-}
-
-.tl-addr{
-display:inline-block;
-margin-top:5px;
-font-size:.72rem;
-color:var(--gold-light);
-}
-
-.tip-box{
-margin:4px 24px 20px;
-padding:14px 18px;
-background:rgba(126,245,176,.06);
-border:1px solid rgba(126,245,176,.2);
-border-radius:10px;
-font-size:.8rem;
-color:var(--text-dim);
-line-height:1.6;
-}
-
-.route-btn-wrap{
-padding:0 24px 24px;
-}
-
-.route-btn{
-display:inline-block;
-padding:12px 18px;
-border-radius:12px;
-text-decoration:none;
-background:rgba(201,168,76,.12);
-border:1px solid rgba(201,168,76,.35);
-color:#E8C97A;
-font-size:.85rem;
-font-weight:600;
-transition:.2s;
-backdrop-filter:blur(8px);
-}
-
-.route-btn:hover{
-background:rgba(201,168,76,.2);
-transform:translateY(-1px);
-}
-
-footer{
-position:relative;
-z-index:10;
-text-align:center;
-padding:28px 16px;
-border-top:1px solid rgba(201,168,76,.15);
-font-size:.75rem;
-color:var(--text-dim);
-}
-
-@media(max-width:600px){
-.day-header{
-padding:16px;
-}
-
-.timeline{
-padding:16px;
-}
-
-.tip-box{
-margin:4px 16px 16px;
-}
-
-.route-btn-wrap{
-padding:0 16px 20px;
-}
-
-.day-tag{
-display:none;
-}
-}
+  :root { --gold:#C9A84C; --gold-light:#E8C97A; --white-glass:rgba(255,255,255,0.12); --text:#F0EDE6; --text-dim:rgba(240,237,230,0.7); }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Raleway',sans-serif; background:#080c1a; color:var(--text); min-height:100vh; overflow-x:hidden; }
+  .stars-bg { position:fixed; inset:0; z-index:0; background:radial-gradient(ellipse at 20% 30%,#0d1b3e 0%,#080c1a 60%),radial-gradient(ellipse at 80% 70%,#1a0d2e 0%,transparent 60%); }
+  .stars-bg::before,.stars-bg::after { content:''; position:absolute; inset:0; background-image:radial-gradient(1px 1px at 10% 15%,rgba(255,255,255,.8) 0%,transparent 100%),radial-gradient(1px 1px at 25% 40%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 40% 10%,rgba(255,255,255,.9) 0%,transparent 100%),radial-gradient(1px 1px at 55% 55%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 70% 25%,rgba(255,255,255,.8) 0%,transparent 100%),radial-gradient(1px 1px at 85% 60%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 15% 75%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 35% 85%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 60% 80%,rgba(255,255,255,.8) 0%,transparent 100%),radial-gradient(1px 1px at 80% 90%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 5% 50%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 90% 35%,rgba(255,255,255,.9) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 50% 30%,rgba(201,168,76,.5) 0%,transparent 100%); }
+  .stars-bg::after { background-image:radial-gradient(1px 1px at 7% 20%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 32% 5%,rgba(255,255,255,.8) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 58% 95%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 78% 48%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 92% 12%,rgba(255,255,255,.9) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 38% 22%,rgba(201,168,76,.4) 0%,transparent 100%),radial-gradient(1px 1px at 55% 18%,rgba(255,255,255,.9) 0%,transparent 100%); animation:twinkle 4s ease-in-out infinite alternate; }
+  @keyframes twinkle { from{opacity:.6} to{opacity:1} }
+  header { position:relative; z-index:10; text-align:center; padding:48px 24px 36px; border-bottom:1px solid rgba(201,168,76,.2); }
+  .logo-row { display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:16px; }
+  .club-logo { width:56px; height:56px; object-fit:contain; filter:drop-shadow(0 0 8px rgba(201,168,76,.4)); }
+  .header-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,6vw,3.5rem); font-weight:900; letter-spacing:.04em; background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 50%,#fff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1.1; }
+  .header-sub { font-size:.9rem; font-weight:300; letter-spacing:.25em; text-transform:uppercase; color:var(--text-dim); margin-top:8px; }
+  .gold-line { width:80px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); margin:16px auto 0; }
+  .notice-banner { position:relative; z-index:10; margin:20px auto; padding:16px 20px; background:rgba(180,60,40,.15); border:1px solid rgba(220,80,50,.4); border-radius:10px; max-width:900px; backdrop-filter:blur(8px); }
+  .notice-banner h3 { font-size:.95rem; color:#f08070; margin-bottom:8px; }
+  .notice-banner ul { list-style:none; font-size:.82rem; color:var(--text-dim); display:flex; flex-direction:column; gap:4px; }
+  .notice-banner li::before { content:'⚠ '; }
+  main { position:relative; z-index:10; max-width:920px; margin:0 auto; padding:0 16px 60px; }
+  .day-card { margin:28px 0; background:var(--white-glass); border:1px solid rgba(201,168,76,.25); border-radius:16px; overflow:hidden; backdrop-filter:blur(12px); opacity:0; transform:translateY(24px); animation:fadeUp .5s ease forwards; }
+  .day-card:nth-child(1){animation-delay:.1s} .day-card:nth-child(2){animation-delay:.2s} .day-card:nth-child(3){animation-delay:.3s} .day-card:nth-child(4){animation-delay:.4s}
+  @keyframes fadeUp { to{opacity:1;transform:translateY(0)} }
+  .day-header { display:flex; align-items:center; gap:16px; padding:20px 24px; border-bottom:1px solid rgba(201,168,76,.15); background:rgba(201,168,76,.06); }
+  .day-badge { font-family:'Playfair Display',serif; font-size:2rem; font-weight:900; color:var(--gold); line-height:1; min-width:48px; }
+  .day-info h2 { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; }
+  .day-info .day-date { font-size:.78rem; font-weight:300; letter-spacing:.15em; text-transform:uppercase; color:var(--gold-light); margin-top:2px; }
+  .day-tag { margin-left:auto; font-size:.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:5px 12px; border-radius:20px; border:1px solid; white-space:nowrap; }
+  .tag-travel{color:#7eb8f5;border-color:rgba(126,184,245,.4);background:rgba(126,184,245,.08)} .tag-game{color:#f5a27e;border-color:rgba(245,162,126,.4);background:rgba(245,162,126,.08)} .tag-explore{color:#7ef5b0;border-color:rgba(126,245,176,.4);background:rgba(126,245,176,.08)} .tag-home{color:#d0b8f5;border-color:rgba(208,184,245,.4);background:rgba(208,184,245,.08)}
+  .timeline { padding:20px 24px; display:flex; flex-direction:column; }
+  .tl-item { display:flex; gap:16px; padding-bottom:20px; }
+  .tl-item:last-child{padding-bottom:0}
+  .tl-left { display:flex; flex-direction:column; align-items:center; min-width:52px; }
+  .tl-time { font-size:.75rem; font-weight:600; color:var(--gold-light); letter-spacing:.05em; white-space:nowrap; }
+  .tl-dot { width:10px; height:10px; border-radius:50%; background:var(--gold); margin:6px 0; flex-shrink:0; box-shadow:0 0 6px rgba(201,168,76,.5); }
+  .tl-dot.game-dot{background:#f5a27e;box-shadow:0 0 6px rgba(245,162,126,.5)}
+  .tl-line { width:1px; flex:1; background:linear-gradient(to bottom,rgba(201,168,76,.4),rgba(201,168,76,.1)); min-height:20px; }
+  .tl-content{flex:1;padding-top:2px}
+  .tl-content h3{font-size:.93rem;font-weight:600;margin-bottom:4px}
+  .tl-content p{font-size:.8rem;color:var(--text-dim);line-height:1.6}
+  .tl-addr{display:inline-block;margin-top:5px;font-size:.72rem;color:var(--gold-light);letter-spacing:.05em}
+  .tip-box{margin:4px 24px 20px;padding:14px 18px;background:rgba(126,245,176,.06);border:1px solid rgba(126,245,176,.2);border-radius:10px;font-size:.8rem;color:var(--text-dim);line-height:1.6}
+  .tip-box strong{color:#7ef5b0}
+  footer{position:relative;z-index:10;text-align:center;padding:28px 16px;border-top:1px solid rgba(201,168,76,.15);font-size:.75rem;color:var(--text-dim);letter-spacing:.1em}
+  footer img{width:36px;margin-bottom:8px;filter:opacity(.5)}
+  @media(max-width:600px){.day-header{padding:16px}.timeline{padding:16px}.tip-box{margin:4px 16px 16px}.day-tag{display:none}}
 </style>
 </head>
-
 <body>
-
 <div class="stars-bg"></div>
 
 <header>
-<div class="logo-row">
-<img src="malaxit.jpg" alt="Малахит" class="club-logo">
-<div>
-<div class="header-title">Санкт-Петербург</div>
-<div class="header-sub">Регби-тур · 5–8 июня 2026</div>
-</div>
-<img src="malaxit.jpg" alt="Малахит" class="club-logo">
-</div>
-<div class="gold-line"></div>
+  <div class="logo-row">
+    <img src="malaxit.jpg" alt="Малахит" class="club-logo" onerror="this.style.display='none'">
+    <div>
+      <div class="header-title">Санкт-Петербург</div>
+      <div class="header-sub">Регби-тур · 5–8 июня 2026</div>
+    </div>
+    <img src="malaxit.jpg" alt="Малахит" class="club-logo" onerror="this.style.display='none'">
+  </div>
+  <div class="gold-line"></div>
 </header>
 
-<div class="notice-banner">
-<h3>⚠ Что сейчас на ремонте</h3>
-<ul>
-<li>Невский проспект — ремонт тротуаров и фасадов до ноября 2026</li>
-<li>Станции метро «Фрунзенская» и «Парк Победы» — закрыты</li>
-<li>Набережная Фонтанки — частичное сужение движения</li>
-</ul>
+<div class="notice-banner" style="margin:20px 16px;max-width:900px;margin-left:auto;margin-right:auto;">
+  <h3>⚠ Что сейчас на ремонте</h3>
+  <ul>
+    <li>Невский проспект — ремонт тротуаров и фасадов до ноября 2026, строительные леса на зданиях</li>
+    <li>Станции метро «Фрунзенская» и «Парк Победы» — закрыты до 2027 г.</li>
+    <li>Набережная Фонтанки (у Крюкова канала) — сужение движения до октября 2028 г.</li>
+  </ul>
 </div>
 
 <main>
 
-<!-- ПЯТНИЦА -->
+<!-- ДЕНЬ 1 -->
 <div class="day-card">
-
-<div class="day-header">
-<div class="day-badge">1</div>
-
-<div class="day-info">
-<h2>Приезд · Нетипичный Питер</h2>
-<div class="day-date">Пятница, 5 июня</div>
+  <div class="day-header">
+    <div class="day-badge">1</div>
+    <div class="day-info">
+      <h2>Приезд · Нетипичный Питер</h2>
+      <div class="day-date">Пятница, 5 июня</div>
+    </div>
+    <span class="day-tag tag-travel">✈ Приезд</span>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">11:15</span><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>🚆 Прибытие в Петербург</h3>
+        <p>Заселение в гостиницу, обед. Отдохнуть и выдвигаться.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">~14:00</span><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>🌿 Сад Сан-Жермен</h3>
+        <p>Тайный двор-сад спрятан за аркой обычного жилого дома. Внутри — готический фонтан, зелень и абсолютная тишина посреди шумного города. Мало кто из туристов знает об этом месте.</p>
+        <span class="tl-addr">Литейный пр., 46</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">~15:00</span><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>🎨 Мозаичный дворик</h3>
+        <p>Двор полностью выложен мозаикой — яркие панно, цветные дорожки, скамейки в узорах. Это сделали ученики соседней школы вместе с учителем. Один из самых фотогеничных двориков города.</p>
+        <span class="tl-addr">Фонтанка, 2</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">~16:00</span><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>🏰 Особняк Кельха</h3>
+        <p>Готический особняк конца XIX века — башни, скульптуры, мрачная роскошь. Строился для богатого золотопромышленника. Один из красивейших фасадов города, производит сильное впечатление даже снаружи.</p>
+        <span class="tl-addr">Чайковского, 28</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">~17:30</span><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>📸 Фотобудка Memopix</h3>
+        <p>Ретро-кабина в Особняке Слепцова. Несколько кадров, мгновенная печать — лучший сувенир из поездки.</p>
+        <span class="tl-addr">Большая Конюшенная, 9 · метро Невский проспект</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">~18:30</span><div class="tl-dot"></div></div>
+      <div class="tl-content">
+        <h3>🌆 Вечерняя прогулка</h3>
+        <p>Свободное время — погулять, поужинать, привыкнуть к белым ночам. В июне в Питере не темнеет до глубокой ночи.</p>
+      </div>
+    </div>
+  </div>
+  <div class="tip-box">
+    <strong>По маршруту:</strong> Сад Сан-Жермен → Мозаичный дворик → Особняк Кельха → Фотобудка — всё пешком, около 3 км, реально за 3,5–4 часа с остановками на фото.
+  </div>
 </div>
 
-<span class="day-tag tag-travel">✈ Приезд</span>
-</div>
-
-<div class="timeline">
-
-<div class="tl-item">
-<div class="tl-left">
-<span class="tl-time">14:00</span>
-<div class="tl-dot"></div>
-<div class="tl-line"></div>
-</div>
-
-<div class="tl-content">
-<h3>🌿 Сад Сан-Жермен</h3>
-<p>Тайный двор-сад в центре города.</p>
-<span class="tl-addr">Литейный пр., 46</span>
-</div>
-</div>
-
-<div class="tl-item">
-<div class="tl-left">
-<span class="tl-time">15:00</span>
-<div class="tl-dot"></div>
-<div class="tl-line"></div>
-</div>
-
-<div class="tl-content">
-<h3>🎨 Мозаичный дворик</h3>
-<p>Один из самых ярких двориков Петербурга.</p>
-<span class="tl-addr">Фонтанка, 2</span>
-</div>
-</div>
-
-<div class="tl-item">
-<div class="tl-left">
-<span class="tl-time">16:00</span>
-<div class="tl-dot"></div>
-<div class="tl-line"></div>
-</div>
-
-<div class="tl-content">
-<h3>🏰 Особняк Кельха</h3>
-<p>Готический особняк XIX века.</p>
-<span class="tl-addr">Чайковского, 28</span>
-</div>
-</div>
-
-<div class="tl-item">
-<div class="tl-left">
-<span class="tl-time">17:30</span>
-<div class="tl-dot"></div>
-</div>
-
-<div class="tl-content">
-<h3>📸 Memopix</h3>
-<p>Фотобудка в историческом особняке.</p>
-<span class="tl-addr">Большая Конюшенная, 9</span>
-</div>
-</div>
-
-</div>
-
-<div class="tip-box">
-<strong>Маршрут пешком:</strong>
-около 3 км.
-</div>
-
-<div class="route-btn-wrap">
-<a
-href="https://yandex.ru/maps/?rtext=59.937771,30.348091~59.950186,30.338487~59.944682,30.361503~59.938947,30.323350&rtt=pedestrian"
-target="_blank"
-class="route-btn">
-🗺 Открыть маршрут в Яндекс Картах
-</a>
-</div>
-
-</div>
-
-<!-- ВОСКРЕСЕНЬЕ -->
+<!-- ДЕНЬ 2 -->
 <div class="day-card">
-
-<div class="day-header">
-<div class="day-badge">3</div>
-
-<div class="day-info">
-<h2>Финал · Главный Питер</h2>
-<div class="day-date">Воскресенье, 8 июня</div>
+  <div class="day-header">
+    <div class="day-badge">2</div>
+    <div class="day-info">
+      <h2>День игры</h2>
+      <div class="day-date">Суббота, 7 июня</div>
+    </div>
+    <span class="day-tag tag-game">🏉 Игра</span>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">Утро</span><div class="tl-dot game-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>🌅 Сбор команды</h3>
+        <p>Завтрак, разминка, выезд на стадион «Петровский».</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">Игра</span><div class="tl-dot game-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>🏉 Соревнования</h3>
+        <p>Стадион «Петровский», Петровский о-в, 2. Удачи команде!</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">Вечер</span><div class="tl-dot"></div></div>
+      <div class="tl-content">
+        <h3>🍽 Отдых и ужин</h3>
+        <p>Восстановление сил перед финальным днём.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
-<span class="day-tag tag-explore">✨ Прогулка</span>
+<!-- ДЕНЬ 3 -->
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-badge">3</div>
+    <div class="day-info">
+      <h2>Финал · Главный Питер</h2>
+      <div class="day-date">Воскресенье, 8 июня</div>
+    </div>
+    <span class="day-tag tag-explore">✨ Прогулка</span>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">Утро</span><div class="tl-dot game-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>🏉 Финальные игры + награждение</h3>
+        <p>Стадион «Петровский». Церемония награждения ~15:00–16:00.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">16:00</span><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>🛁 Душ и отдых</h3>
+        <p>1–2 часа в гостинице — привести себя в порядок перед вечерней прогулкой.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">~17:30</span><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>🏰 Петропавловская крепость</h3>
+        <p>Первая крепость города, основана Петром I в 1703 году. Отсюда открывается лучший вид на Неву и дворцовую набережную. Пляж на берегу, золотой шпиль собора над горизонтом — одно из самых красивых мест города. Вход на территорию бесплатный.</p>
+        <span class="tl-addr">Заячий о-в · метро Горьковская</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">~18:30</span><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>🕌 Соборная мечеть</h3>
+        <p>Бирюзовый купол прямо у крепости — одна из крупнейших мечетей Европы и самая северная в мире. Построена в 1913 году, прообразом послужила мечеть Гур-Эмир в Самарканде. Снаружи производит огромное впечатление даже на тех, кто далёк от архитектуры.</p>
+        <span class="tl-addr">Кронверкский пр., 7</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">~19:30</span><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>🏛 Дворцовая площадь</h3>
+        <p>Главная площадь Петербурга — Эрмитаж, Александровская колонна, грандиозный масштаб. В вечернем свете белых ночей здесь особенная атмосфера. Обязательно пройдите через арку Главного штаба — оттуда открывается лучший вид на площадь целиком.</p>
+        <span class="tl-addr">Дворцовая пл. · метро Адмиралтейская</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">~20:30</span><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>🌊 Набережная Невы · Белые ночи</h3>
+        <p>В начале июня в Петербурге не темнеет — небо остаётся светлым почти всю ночь. Прогулка вдоль воды с видом на разводные мосты и дворцы — настоящая питерская магия.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">22:00</span><div class="tl-dot"></div></div>
+      <div class="tl-content">
+        <h3>🏨 Собрание команды в отеле</h3>
+        <p>Обязательный сбор в 22:00.</p>
+      </div>
+    </div>
+  </div>
+  <div class="tip-box">
+    <strong>По маршруту:</strong> Крепость → Мечеть → Дворцовая → Набережная — всё пешком, около 3 км, спокойно за 4,5 часа. Вечерний свет белых ночей делает эти места особенно красивыми.
+  </div>
 </div>
 
-<div class="timeline">
-
-<div class="tl-item">
-<div class="tl-left">
-<span class="tl-time">17:30</span>
-<div class="tl-dot"></div>
-<div class="tl-line"></div>
-</div>
-
-<div class="tl-content">
-<h3>🏰 Петропавловская крепость</h3>
-<p>Исторический центр Петербурга.</p>
-<span class="tl-addr">Заячий остров</span>
-</div>
-</div>
-
-<div class="tl-item">
-<div class="tl-left">
-<span class="tl-time">18:30</span>
-<div class="tl-dot"></div>
-<div class="tl-line"></div>
-</div>
-
-<div class="tl-content">
-<h3>🕌 Соборная мечеть</h3>
-<p>Одна из крупнейших мечетей Европы.</p>
-<span class="tl-addr">Кронверкский пр., 7</span>
-</div>
-</div>
-
-<div class="tl-item">
-<div class="tl-left">
-<span class="tl-time">19:30</span>
-<div class="tl-dot"></div>
-<div class="tl-line"></div>
-</div>
-
-<div class="tl-content">
-<h3>🏛 Дворцовая площадь</h3>
-<p>Главная площадь города.</p>
-<span class="tl-addr">Дворцовая площадь</span>
-</div>
-</div>
-
-<div class="tl-item">
-<div class="tl-left">
-<span class="tl-time">20:30</span>
-<div class="tl-dot"></div>
-</div>
-
-<div class="tl-content">
-<h3>🌊 Набережная Невы</h3>
-<p>Белые ночи и вечерний Петербург.</p>
-</div>
-</div>
-
-</div>
-
-<div class="tip-box">
-<strong>Маршрут пешком:</strong>
-около 3 км.
-</div>
-
-<div class="route-btn-wrap">
-<a
-href="https://yandex.ru/maps/?rtext=59.950215,30.316519~59.955433,30.323081~59.939832,30.315635~59.944493,30.306126&rtt=pedestrian"
-target="_blank"
-class="route-btn">
-🗺 Открыть маршрут в Яндекс Картах
-</a>
-</div>
-
+<!-- ДЕНЬ 4 -->
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-badge">4</div>
+    <div class="day-info">
+      <h2>Отъезд домой</h2>
+      <div class="day-date">Понедельник, 9 июня</div>
+    </div>
+    <span class="day-tag tag-home">🚆 Домой</span>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">11:00</span><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>🧳 Выселение из гостиницы</h3>
+        <p>Сдать номера и выдвигаться на вокзал.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">13:10</span><div class="tl-dot"></div></div>
+      <div class="tl-content">
+        <h3>🚆 Отправление</h3>
+        <p>До свидания, Петербург! 🌉</p>
+      </div>
+    </div>
+  </div>
+  <div class="tip-box">
+    <strong>Если будет время до вокзала:</strong> зайти в магазин «Север-Метрополь» за конфетами и тортом «Ленинградский» — лучший съедобный сувенир из Питера.
+  </div>
 </div>
 
 </main>
 
 <footer>
-<div>Регби-клуб «Малахит» · Санкт-Петербург 2026</div>
-<div style="margin-top:4px;opacity:.5">Удачи на поле ⚡</div>
+  <img src="malaxit.jpg" alt="" onerror="this.style.display='none'">
+  <div>Регби-клуб «Малахит» · Санкт-Петербург 2026</div>
+  <div style="margin-top:4px;opacity:.5">Удачи на поле ⚡</div>
 </footer>
-
 </body>
 </html>
