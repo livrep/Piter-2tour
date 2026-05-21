@@ -19,6 +19,7 @@
   .header-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,6vw,3.5rem); font-weight:900; letter-spacing:.04em; background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 50%,#fff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1.1; }
   .header-sub { font-size:.9rem; font-weight:300; letter-spacing:.25em; text-transform:uppercase; color:var(--text-dim); margin-top:8px; }
   .gold-line { width:80px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); margin:16px auto 0; }
+  .hotel-badge { display:inline-flex; align-items:center; gap:8px; margin-top:14px; padding:8px 18px; background:rgba(201,168,76,.1); border:1px solid rgba(201,168,76,.3); border-radius:20px; font-size:.8rem; color:var(--gold-light); letter-spacing:.05em; }
   .notice-banner { position:relative; z-index:10; margin:20px auto; padding:16px 20px; background:rgba(180,60,40,.15); border:1px solid rgba(220,80,50,.4); border-radius:10px; max-width:900px; backdrop-filter:blur(8px); }
   .notice-banner h3 { font-size:.95rem; color:#f08070; margin-bottom:8px; }
   .notice-banner ul { list-style:none; font-size:.82rem; color:var(--text-dim); display:flex; flex-direction:column; gap:4px; }
@@ -45,11 +46,14 @@
   .tl-content h3{font-size:.93rem;font-weight:600;margin-bottom:4px}
   .tl-content p{font-size:.8rem;color:var(--text-dim);line-height:1.6}
   .tl-addr{display:inline-block;margin-top:5px;font-size:.72rem;color:var(--gold-light);letter-spacing:.05em}
+  .map-section{padding:0 24px 20px}
+  .map-btn { display:inline-flex; align-items:center; gap:8px; padding:11px 20px; background:rgba(201,168,76,.1); border:1px solid rgba(201,168,76,.4); border-radius:8px; color:var(--gold-light); text-decoration:none; font-size:.8rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; transition:all .25s; }
+  .map-btn:hover{background:rgba(201,168,76,.2);border-color:var(--gold);transform:translateY(-1px)}
   .tip-box{margin:4px 24px 20px;padding:14px 18px;background:rgba(126,245,176,.06);border:1px solid rgba(126,245,176,.2);border-radius:10px;font-size:.8rem;color:var(--text-dim);line-height:1.6}
   .tip-box strong{color:#7ef5b0}
   footer{position:relative;z-index:10;text-align:center;padding:28px 16px;border-top:1px solid rgba(201,168,76,.15);font-size:.75rem;color:var(--text-dim);letter-spacing:.1em}
   footer img{width:36px;margin-bottom:8px;filter:opacity(.5)}
-  @media(max-width:600px){.day-header{padding:16px}.timeline{padding:16px}.tip-box{margin:4px 16px 16px}.day-tag{display:none}}
+  @media(max-width:600px){.day-header{padding:16px}.timeline{padding:16px}.tip-box{margin:4px 16px 16px}.map-section{padding:0 16px 16px}.day-tag{display:none}}
 </style>
 </head>
 <body>
@@ -65,6 +69,7 @@
     <img src="malaxit.jpg" alt="Малахит" class="club-logo" onerror="this.style.display='none'">
   </div>
   <div class="gold-line"></div>
+  <div class="hotel-badge">🏨 Гостиница Jo-Inn · Большой пр. П.С., 13/4</div>
 </header>
 
 <div class="notice-banner" style="margin:20px 16px;max-width:900px;margin-left:auto;margin-right:auto;">
@@ -78,7 +83,7 @@
 
 <main>
 
-<!-- ДЕНЬ 1 -->
+<!-- ДЕНЬ 1: ПЯТНИЦА -->
 <div class="day-card">
   <div class="day-header">
     <div class="day-badge">1</div>
@@ -93,7 +98,16 @@
       <div class="tl-left"><span class="tl-time">11:15</span><div class="tl-dot"></div><div class="tl-line"></div></div>
       <div class="tl-content">
         <h3>🚆 Прибытие в Петербург</h3>
-        <p>Заселение в гостиницу, обед. Отдохнуть и выдвигаться.</p>
+        <p>Заселение в Jo-Inn, отдохнуть и переодеться.</p>
+        <span class="tl-addr">Большой пр. П.С., 13/4</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><span class="tl-time">~13:00</span><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <h3>🍩 Пышечная</h3>
+        <p>Легендарное заведение с 1958 года — советский интерьер, горячие пышки в сахарной пудре и кофе со сгущёнкой. Очередь двигается быстро, атмосфера незабываемая. Обязательно к посещению в первый день.</p>
+        <span class="tl-addr">Большая Конюшенная, 25 · работает 09:00–20:00</span>
       </div>
     </div>
     <div class="tl-item">
@@ -101,7 +115,7 @@
       <div class="tl-content">
         <h3>🌿 Сад Сан-Жермен</h3>
         <p>Тайный двор-сад спрятан за аркой обычного жилого дома. Внутри — готический фонтан, зелень и абсолютная тишина посреди шумного города. Мало кто из туристов знает об этом месте.</p>
-        <span class="tl-addr">Литейный пр., 46</span>
+        <span class="tl-addr">Литейный пр., 46 · открыт круглосуточно</span>
       </div>
     </div>
     <div class="tl-item">
@@ -109,7 +123,7 @@
       <div class="tl-content">
         <h3>🎨 Мозаичный дворик</h3>
         <p>Двор полностью выложен мозаикой — яркие панно, цветные дорожки, скамейки в узорах. Это сделали ученики соседней школы вместе с учителем. Один из самых фотогеничных двориков города.</p>
-        <span class="tl-addr">Фонтанка, 2</span>
+        <span class="tl-addr">Чайковского, 2 · открыт 10:00–22:00</span>
       </div>
     </div>
     <div class="tl-item">
@@ -124,7 +138,7 @@
       <div class="tl-left"><span class="tl-time">~17:30</span><div class="tl-dot"></div><div class="tl-line"></div></div>
       <div class="tl-content">
         <h3>📸 Фотобудка Memopix</h3>
-        <p>Ретро-кабина в Особняке Слепцова. Несколько кадров, мгновенная печать — лучший сувенир из поездки.</p>
+        <p>Ретро-кабина в Особняке Слепцова. Несколько кадров, мгновенная печать — лучший сувенир из поездки. Пышечная и будка совсем рядом — удобно совместить.</p>
         <span class="tl-addr">Большая Конюшенная, 9 · метро Невский проспект</span>
       </div>
     </div>
@@ -136,12 +150,17 @@
       </div>
     </div>
   </div>
+  <div class="map-section">
+    <a class="map-btn" href="https://yandex.ru/maps/2/saint-petersburg/?ll=30.321905%2C59.947182&mode=routes&rtext=59.955313%2C30.295458~59.937505%2C30.322441~59.941293%2C30.323873~59.937574%2C30.350090~59.946726%2C30.354865~59.947230%2C30.339103~59.955291%2C30.295485&rtt=pd&ruri=~~~~~~ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzQ1OTYwMhJ80KDQvtGB0YHQuNGPLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0JHQvtC70YzRiNC-0Lkg0L_RgNC-0YHQv9C10LrRgiDQn9C10YLRgNC-0LPRgNCw0LTRgdC60L7QuSDRgdGC0L7RgNC-0L3RiywgMTMvNCIKDSld8kEVONJvQg%2C%2C&z=14.21" target="_blank">
+      🗺 Маршрут пятницы на Яндекс.Картах
+    </a>
+  </div>
   <div class="tip-box">
-    <strong>По маршруту:</strong> Сад Сан-Жермен → Мозаичный дворик → Особняк Кельха → Фотобудка — всё пешком, около 3 км, реально за 3,5–4 часа с остановками на фото.
+    <strong>По маршруту:</strong> Jo-Inn → Пышечная → Сад Сан-Жермен → Мозаичный дворик → Особняк Кельха → Фотобудка — всё пешком, около 4 км, реально за 4–4,5 часа с остановками на фото.
   </div>
 </div>
 
-<!-- ДЕНЬ 2 -->
+<!-- ДЕНЬ 2: СУББОТА -->
 <div class="day-card">
   <div class="day-header">
     <div class="day-badge">2</div>
@@ -176,7 +195,7 @@
   </div>
 </div>
 
-<!-- ДЕНЬ 3 -->
+<!-- ДЕНЬ 3: ВОСКРЕСЕНЬЕ -->
 <div class="day-card">
   <div class="day-header">
     <div class="day-badge">3</div>
@@ -206,7 +225,7 @@
       <div class="tl-content">
         <h3>🏰 Петропавловская крепость</h3>
         <p>Первая крепость города, основана Петром I в 1703 году. Отсюда открывается лучший вид на Неву и дворцовую набережную. Пляж на берегу, золотой шпиль собора над горизонтом — одно из самых красивых мест города. Вход на территорию бесплатный.</p>
-        <span class="tl-addr">Заячий о-в · метро Горьковская</span>
+        <span class="tl-addr">Заячий о-в · метро Горьковская · открыта 10:00–20:00</span>
       </div>
     </div>
     <div class="tl-item">
@@ -214,7 +233,7 @@
       <div class="tl-content">
         <h3>🕌 Соборная мечеть</h3>
         <p>Бирюзовый купол прямо у крепости — одна из крупнейших мечетей Европы и самая северная в мире. Построена в 1913 году, прообразом послужила мечеть Гур-Эмир в Самарканде. Снаружи производит огромное впечатление даже на тех, кто далёк от архитектуры.</p>
-        <span class="tl-addr">Кронверкский пр., 7</span>
+        <span class="tl-addr">Кронверкский пр., 7 · открыта до 17:00 — только снаружи</span>
       </div>
     </div>
     <div class="tl-item">
@@ -240,12 +259,17 @@
       </div>
     </div>
   </div>
+  <div class="map-section">
+    <a class="map-btn" href="https://yandex.ru/maps/2/saint-petersburg/?ll=30.312392%2C59.946860&mode=routes&rtext=59.955206%2C30.295341~59.950002%2C30.316672~59.955164%2C30.323966~59.938240%2C30.314873~59.955291%2C30.295485&rtt=pd&ruri=~~~~ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzQ1OTYwMhJ80KDQvtGB0YHQuNGPLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0JHQvtC70YzRiNC-0Lkg0L_RgNC-0YHQv9C10LrRgiDQn9C10YLRgNC-0LPRgNCw0LTRgdC60L7QuSDRgdGC0L7RgNC-0L3RiywgMTMvNCIKDSld8kEVONJvQg%2C%2C&z=14.81" target="_blank">
+      🗺 Маршрут воскресенья на Яндекс.Картах
+    </a>
+  </div>
   <div class="tip-box">
-    <strong>По маршруту:</strong> Крепость → Мечеть → Дворцовая → Набережная — всё пешком, около 3 км, спокойно за 4,5 часа. Вечерний свет белых ночей делает эти места особенно красивыми.
+    <strong>По маршруту:</strong> Jo-Inn → Крепость → Мечеть → Дворцовая → Набережная — всё пешком, около 4 км, спокойно за 4,5 часа. Гостиница на Петроградке — крепость буквально в 15 минутах ходьбы!
   </div>
 </div>
 
-<!-- ДЕНЬ 4 -->
+<!-- ДЕНЬ 4: ПОНЕДЕЛЬНИК -->
 <div class="day-card">
   <div class="day-header">
     <div class="day-badge">4</div>
@@ -279,9 +303,12 @@
 </main>
 
 <footer>
-  <img src="malaxit.jpg" alt="" onerror="this.style.display='none'">
   <div>Регби-клуб «Малахит» · Санкт-Петербург 2026</div>
-  <div style="margin-top:4px;opacity:.5">Удачи на поле ⚡</div>
+  <div style="margin-top:8px;opacity:.6;display:flex;align-items:center;justify-content:center;gap:8px;">
+    <img src="malaxit.jpg" alt="Малахит" style="width:22px;height:22px;object-fit:contain;vertical-align:middle;" onerror="this.style.display='none'">
+    <span>Удачи на поле ⚡</span>
+    <img src="malaxit.jpg" alt="Малахит" style="width:22px;height:22px;object-fit:contain;vertical-align:middle;" onerror="this.style.display='none'">
+  </div>
 </footer>
 </body>
 </html>
